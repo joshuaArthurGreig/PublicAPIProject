@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
 
     lateinit var gifView : pl.droidsonroids.gif.GifImageView
-    lateinit var urlCall :String
+    lateinit var urlCall : String
 
     companion object {
         val TAG = "MainActivity"
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         val catAPI = RetrofitHelper.getInstance().create(CatInfo::class.java)
 
-
+        //https://cataas.com/cat/gif?json=true, get the url code at the end and stitch to end of base url
 
         Picasso.get().load("https://cataas.com" + urlCall).into(gifView)
     }
